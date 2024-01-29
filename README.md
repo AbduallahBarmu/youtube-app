@@ -1,8 +1,8 @@
 ## Components:
 
-VideoCardComponent: Responsible for displaying individual video information (title, thumbnail, note).
-VideoListComponent: Hosts multiple VideoCardComponents, allows drag-and-drop reordering, and displays refresh button.
-ChannelComponent: Main component, handles fetching videos based on channel ID entered in the textbox and passes data to VideoListComponent.
+- VideoCardComponent: Responsible for displaying individual video information (title, thumbnail, note).
+- VideoListComponent: Hosts multiple VideoCardComponents, allows drag-and-drop reordering, and displays refresh button.
+- ChannelComponent: Main component, handles fetching videos based on channel ID entered in the textbox and passes data to VideoListComponent.
 
 ## Services:
 
