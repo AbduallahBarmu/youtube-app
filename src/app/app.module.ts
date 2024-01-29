@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ChannelComponent } from './components/channel/channel.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
+import {HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { VideoListComponent } from './components/video-list/video-list.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
