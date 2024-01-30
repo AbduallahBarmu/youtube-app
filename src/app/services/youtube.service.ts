@@ -11,7 +11,7 @@ export class YoutubeService {
   constructor(private http: HttpClient) { }
 
   getYoutubeChannels(channelId: string): Observable<any> {
-    const apiKey = "AIzaSyDBFkBgNA5qbb9tzA-B40ZDhEUQSld6bio";
+    const apiKey = "AIzaSyDqcQqwIaLMNeXUzIOau0R1qG4QTaWXwS4";
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q${channelId}&type=channel&key=${apiKey}&maxResults=20`;
     return this.http.get(url);
   }

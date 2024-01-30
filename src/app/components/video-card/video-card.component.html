@@ -1,5 +1,18 @@
-
 <div class="video-card" *ngFor="let channel of channels">
-        <img src="{{channel.snippet.thumbnails.medium.url}}"  width="200" height="200"/>
-        {{channel.snippet.title}}
+    <div class="card-content">
+        <div class="image">
+            <img src="{{channel.snippet.thumbnails.medium.url}}" />
+        </div>
+        <div class="content">
+            <span class="title">{{channel.snippet.title}}</span>
+            <p class="description">{{channel.snippet.description}}</p>
+        </div>
+        <div class="actions">
+            <input type="text">
+            <button class="track" type="button">Track my package</button>
+        </div>
+    </div>
 </div>
+
+
+
