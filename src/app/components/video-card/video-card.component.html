@@ -1,1 +1,5 @@
-<p>video-card works!</p>
+
+<div class="video-card" *ngFor="let channel of channels">
+        <img src="{{channel.snippet.thumbnails.medium.url}}"  width="200" height="200"/>
+        {{channel.snippet.title}}
+</div>
