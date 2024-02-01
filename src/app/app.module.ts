@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChannelComponent } from './components/channel/channel.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
-import { VideoListComponent } from './components/video-list/video-list.component';
 import {HttpClientModule } from '@angular/common/http'
 import { ChannelModule } from './components/channel/channel.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     ChannelComponent,
     VideoCardComponent,
-    VideoListComponent
   ],
   imports: [
     ChannelModule,

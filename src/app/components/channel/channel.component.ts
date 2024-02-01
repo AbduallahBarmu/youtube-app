@@ -1,41 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
-import { YoutubeService } from 'src/app/services/youtube.service';
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { YoutubeService } from "src/app/services/youtube.service";
 
 @Component({
-
-  selector: 'app-channel',
-  templateUrl: './channel.component.html',
-  styleUrls: ['./channel.component.css'], 
- 
+  selector: "app-channel",
+  templateUrl: "./channel.component.html",
+  styleUrls: ["./channel.component.css"]
 })
 export class ChannelComponent implements OnInit {
   channels:any
-  searchValue: string = ''; 
-  searchForm: FormGroup; // Declare searchForm as FormGroup
+  searchValue: string = '';
 
-  constructor(private fb: FormBuilder, private youtubeService: YoutubeService) {
-    this.searchForm = this.fb.group({
-      searchValue: '' // Initialize searchForm in the constructor
-    }); 
-  }
-  
+
+  constructor(private youtubeService: YoutubeService) {}
 
   ngOnInit(): void {
-      
+    this.getChannels()
   }
 
+  
   getChannels() {
-    this.youtubeService.getYoutubeChannels(this.searchValue).subscribe((data) => {
-      this.channels = data
+    this.youtubeService.getYoutubeChannels(this.searchValue).subscribe(data => {
+      this.channels = data.items;
+      console.log(this.channels);
     });
   }
 
-  
-  onSearchSubmit(): void{
-   this.searchValue = this.searchForm.value.searchValue ?? '' ; 
-   this.getChannels()
+  filterSearch(searchResult:string){
+    if (!searchResult) {
+      this.channels = this.channels;
+      return;
+    }
+    this.channels = this.channels.filter(
+      (channelId: string) => channelId?.toLowerCase().includes(searchResult.toLowerCase())
+    );
   }
-
 
 }

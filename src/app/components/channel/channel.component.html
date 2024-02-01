@@ -1,12 +1,13 @@
 <div class="channel-header">
-    <form  
-        [formGroup]="searchForm"
-        (ngSubmit)="onSearchSubmit()" 
-        >
-        <input class="search-box" type="text" placeholder="Channel Name ... " formControlName="searchValue">
-        <!-- <button class="search-btn">Get Channels</button> -->
+    <form>
+        <input #filter class="search-box" type="text" placeholder="Channel Name ... ">
+        <button class="search-btn" (click)="filterSearch(filter.value)">Get Channels</button>
     </form>
 </div>
+<div class="video-card">
+    <div *ngFor="let channel of channels">
+        <app-video-card [channeData]="channel"> </app-video-card>   
+    </div>
+    
+</div>
 
-
-<app-video-list></app-video-list>

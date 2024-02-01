@@ -1,12 +1,12 @@
 <section class="body">
-    <div class="video-card" *ngFor="let channel of channels">
+    <div class="video-card ">
         <div class="card-content">
             <div class="image">
-                <img src="{{channel.snippet.thumbnails.medium.url}}" />
+                <img src="{{channeData.snippet.thumbnails.medium.url}}" />
             </div>
             <div class="content">
-                <span class="title">{{channel.snippet.title}}</span>
-                <p class="description">{{channel.snippet.description}}</p>
+                <span class="title">{{channeData.snippet.title}}</span>
+                <p class="description">{{channeData.snippet.description}}</p>
             </div>
             <div class="actions">
                 <input class="input" type="text" placeholder="add your comment">
