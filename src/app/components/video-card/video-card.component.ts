@@ -10,7 +10,7 @@ import { YoutubeService } from "src/app/services/youtube.service";
 export class VideoCardComponent {
   // channels: ChannelInfo[]=[]
   channels:any;
-  searchValue:string='';
+  searchValue:string='programming';
   @Input() videoData: any; 
   
   constructor(private youtubeService: YoutubeService) {}
