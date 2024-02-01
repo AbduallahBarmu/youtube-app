@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 export class YoutubeService {
   constructor(private http: HttpClient) { }
 
-  getYoutubeChannels(channelId: string): Observable<any> {
-    const apiKey = "AIzaSyDqcQqwIaLMNeXUzIOau0R1qG4QTaWXwS4";
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q${channelId}&type=channel&key=${apiKey}&maxResults=20`;
+  getYoutubeChannels(searchValue: string): Observable<any> {
+    const apiKey = "AIzaSyDaJVbtHYpPHqpKYyNjz5_0K3YH5JJJk2k";
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q${searchValue}&type=channel&key=${apiKey}&maxResults=20`;
     return this.http.get(url);
   }
 }

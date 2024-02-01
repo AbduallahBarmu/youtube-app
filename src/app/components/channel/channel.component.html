@@ -1,6 +1,11 @@
 <div class="channel-header">
-    <input  class="search-box"  type="text" placeholder="Channel Name ... ">
-    <button class="search-btn" (click)="searchForChannelId()">Get Channels</button>
+    <form  
+        [formGroup]="searchForm"
+        (ngSubmit)="onSearchSubmit()" 
+        >
+        <input class="search-box" type="text" placeholder="Channel Name ... " formControlName="searchValue">
+        <!-- <button class="search-btn">Get Channels</button> -->
+    </form>
 </div>
 
 

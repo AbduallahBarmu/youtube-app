@@ -7,6 +7,8 @@ import { ChannelComponent } from './components/channel/channel.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
 import {HttpClientModule } from '@angular/common/http'
+import { ChannelModule } from './components/channel/channel.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import {HttpClientModule } from '@angular/common/http'
     VideoListComponent
   ],
   imports: [
+    ChannelModule,
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

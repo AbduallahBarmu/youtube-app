@@ -1,36 +1,16 @@
-<!-- <div class="video-card" *ngFor="let channel of channels">
-    <div class="card-content">
-        <div class="image">
-            <img src="{{channel.snippet.thumbnails.medium.url}}" />
-        </div>
-        <div class="content">
-            <span class="title">{{channel.snippet.title}}</span>
-            <p class="description">{{channel.snippet.description}}</p>
-        </div>
-        <div class="actions">
-            <input type="text">
-            <button class="track" type="button">Track my package</button>
-        </div>
-    </div>
-</div> -->
-
-
 <section class="body">
-
-    <div class="video-card">
+    <div class="video-card" *ngFor="let channel of channels">
         <div class="card-content">
             <div class="image">
-                <img src="" />
+                <img src="{{channel.snippet.thumbnails.medium.url}}" />
             </div>
             <div class="content">
-                <span class="title">title</span>
-                <p class="description">lslkmdlfldskfjlkdsjf</p>
+                <span class="title">{{channel.snippet.title}}</span>
+                <p class="description">{{channel.snippet.description}}</p>
             </div>
             <div class="actions">
                 <input class="input" type="text" placeholder="add your comment">
             </div>
         </div>
     </div>
-    
-        
 </section>

@@ -10,17 +10,18 @@ import { YoutubeService } from "src/app/services/youtube.service";
 export class VideoCardComponent {
   // channels: ChannelInfo[]=[]
   channels:any;
+  searchValue:string='';
   @Input() videoData: any; 
-
+  
   constructor(private youtubeService: YoutubeService) {}
   
   
   ngOnInit() {
-    this.showChannels("programming");
+    this.getChannels();
   }
   
-  showChannels(channelId:string) {
-    this.youtubeService.getYoutubeChannels(channelId).subscribe(data => {
+  getChannels() {
+    this.youtubeService.getYoutubeChannels(this.searchValue).subscribe((data) => {
       this.channels = data.items;
       console.log(this.channels);
     });
